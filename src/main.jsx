@@ -7,6 +7,8 @@ import Rootlayout from './Layout/Rootlayout';
 import Apps from './Pages/apps/Apps';
 import Installapp from './Pages/installapp/Installapp';
 import Homepage from './Pages/homepage/homepage';
+import Errorpage from './Pages/Errorpage/Errorpage';
+
 
 
 
@@ -32,7 +34,7 @@ const router = createBrowserRouter([
         element: <Installapp />
       }
     ],
-    errorElement: <h1>Error the load page</h1>
+    errorElement: <Errorpage /> 
   },
 
 
