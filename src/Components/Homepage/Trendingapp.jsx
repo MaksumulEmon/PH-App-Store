@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router';
+// import { useLoaderData } from 'react-router';
+
+import Appcard from '../Ui/Appcard';
 
 const Trendingapp = () => {
     // const  data= useLoaderData();
@@ -8,8 +10,8 @@ const Trendingapp = () => {
 
     const [apps, setApps] = useState([]);
 
-    useEffect(() =>{
-        const fetchData= async () =>{
+    useEffect(() => {
+        const fetchData = async () => {
             const res = await fetch("/data.json");
             const data = await res.json();
             console.log(data);
@@ -29,9 +31,17 @@ const Trendingapp = () => {
                     <p className='text-xl  opacity-80'>Explore All Trending Apps on the Market developed by us</p>
                 </div>
 
-                {apps.map((app,ind) => {
-                    return <div>{app.title}</div>
-                })}
+                <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
+                    {apps.map((app, ind) => {
+                        return (
+                           <Appcard app={app} ind={ind}></Appcard>
+                        );
+
+                    })}
+
+                </div>
+
+
             </div>
         </div>
     );
