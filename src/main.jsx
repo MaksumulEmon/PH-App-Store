@@ -4,6 +4,10 @@ import './index.css'
 import { RouterProvider } from 'react-router/dom';
 import { createBrowserRouter } from 'react-router';
 import Rootlayout from './Layout/Rootlayout';
+import Apps from './Pages/apps/Apps';
+import Installapp from './Pages/installapp/Installapp';
+import Homepage from './Pages/homepage/homepage';
+
 
 
 
@@ -11,23 +15,24 @@ import Rootlayout from './Layout/Rootlayout';
 const router = createBrowserRouter([
   {
     path: "/",
-  
+
     element: <Rootlayout />,
     children: [
       {
         // path: "/homepage",
-          index:  true,
-        element: <h1>Home page</h1>
+        index: true,
+        element: <Homepage />
       },
       {
-        path: "/apps",
-        element: <h1>All App Here</h1>
+        path: "/allapp",
+        element: <Apps />
       },
       {
-        path: "/emon",
-        element: <h1>Emon Cst, 21 Age BD</h1>
+        path: "/installapp",
+        element: <Installapp />
       }
     ],
+    errorElement: <h1>Error the load page</h1>
   },
 
 
