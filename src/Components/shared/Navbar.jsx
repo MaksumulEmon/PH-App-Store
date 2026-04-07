@@ -25,11 +25,11 @@ const Navbar = () => {
                             className=" dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
 
 
-                            <li> <Mynavlink to={"/"}>Home</Mynavlink>    </li>
+                             <Mynavlink to={"/"}>Home</Mynavlink>   
 
-                            <li>  <Mynavlink to={"/allapp"}>Apps</Mynavlink>   </li>
+                             <Mynavlink to={"/allapp"}>Apps</Mynavlink>   
 
-                            <li> <Mynavlink to={"/installapp"}>Installation</Mynavlink> </li>
+                            <Mynavlink to={"/installapp"}>Installation</Mynavlink> 
 
 
                         </ul>
@@ -43,11 +43,11 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="flex gap-4 menu-horizontal px-1">
 
-                        <li> <Mynavlink to={"/"}>Home</Mynavlink>    </li>
+                         <Mynavlink to={"/"}>Home</Mynavlink>  
 
-                        <li>  <Mynavlink to={"/allapp"}>Apps</Mynavlink>   </li>
+                        <Mynavlink to={"/allapp"}>Apps</Mynavlink>   
 
-                        <li> <Mynavlink to={"/installapp"}>Installation</Mynavlink> </li>
+                        <Mynavlink to={"/installapp"}>Installation</Mynavlink> 
 
                     </ul>
                 </div>

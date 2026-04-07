@@ -14,7 +14,7 @@ const Banner = () => {
                     <div className='space-y-7 lg:mt-10'>
                         <h1 className='text-center text-5xl lg:text-7xl font-bold'>We Build <br />
                             <span className='text-purple-700'>Productive</span> Apps</h1>
-                        <p className='text-xl text-[#627382] text-center max-w-250 mx-auto m-8'>At HERO.IO, we craft innovative apps designed to make everyday life simpler, smarter, and more exciting.Our goal is to turn your ideas into digital experiences that truly make an impact.</p>
+                        <p className='text-xl text-[#627382]  text-center  m-4'>At HERO.IO, we craft innovative apps designed to make everyday life simpler, smarter, and more exciting.Our goal is to turn your ideas into digital experiences that truly make an impact.</p>
                     </div>
 
                     <div className='flex justify-center gap-3 mt-4'>
