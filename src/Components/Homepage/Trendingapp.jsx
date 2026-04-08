@@ -31,7 +31,7 @@ const Trendingapp = () => {
                     <p className='text-xl  opacity-80'>Explore All Trending Apps on the Market developed by us</p>
                 </div>
 
-                <div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
+                <div className='grid grid-cols-1 lg:grid-cols-3  '>
                     {apps.map((app, ind) => {
                         return (
                            <Appcard app={app} ind={ind}></Appcard>

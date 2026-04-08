@@ -6,9 +6,8 @@ import { createBrowserRouter } from 'react-router';
 import Rootlayout from './Layout/Rootlayout';
 import Apps from './Pages/apps/Apps';
 import Installapp from './Pages/installapp/Installapp';
-import Homepage from './Pages/homepage/homepage';
+import Homepage from './Pages/homepage/Homepage';
 import Errorpage from './Pages/Errorpage/Errorpage';
-
 
 
 
@@ -24,7 +23,7 @@ const router = createBrowserRouter([
         // path: "/homepage",
         index: true,
         element: <Homepage />,
-        loader: () => fetch("data.json")
+        loader: () => fetch("/data.json")
       },
       {
         path: "/allapp",
@@ -46,3 +45,4 @@ createRoot(document.getElementById('root')).render(
     <RouterProvider router={router} />
   </StrictMode>,
 )
+
