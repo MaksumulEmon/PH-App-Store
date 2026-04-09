@@ -1,9 +1,10 @@
 import React from 'react';
 import { MdOutlineFileDownload, MdStarBorder } from "react-icons/md";
+import { Link } from 'react-router';
 const Appcard = ({ app, ind }) => {
     return (
 
-        <div key={ind} className="card bg-base-100 shadow-sm p-4 space-y-3 m-4 ">
+        <Link to={`/apps/${app.id}`} key={ind} className="card bg-base-100 shadow-sm p-4 space-y-3 m-4 ">
             <figure>
                 <img
                     src={app.image}
@@ -16,7 +17,7 @@ const Appcard = ({ app, ind }) => {
 
                 <p className='bg-[#FFF0E1] text-[#FF8811] flex items-center gap-2 font-medium px-2 py-2.5 rounded'> <MdStarBorder /> {app.ratingAvg}</p>
             </div>
-        </div>
+        </Link>
 
     );
 };
