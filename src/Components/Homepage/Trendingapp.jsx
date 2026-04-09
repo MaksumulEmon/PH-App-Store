@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 // import { useLoaderData } from 'react-router';
-
 import Appcard from '../Ui/Appcard';
+import { HashLoader } from 'react-spinners';
 
 const Trendingapp = () => {
     // const  data= useLoaderData();
@@ -9,17 +9,27 @@ const Trendingapp = () => {
 
 
     const [apps, setApps] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
             const res = await fetch("/data.json");
             const data = await res.json();
             console.log(data);
-            setApps(data);
+
+            setTimeout(() => {
+                setApps(data)
+                setLoading(false)
+            },2000);
+
+            // setApps(data);
+            // setLoading(false);
         };
         fetchData();
     }, []);
 
+    console.log(apps, "Appps")
+    console.log(loading, "Loading");
     return (
         <div className='bg-[#f5f5f5] '>
 
@@ -31,15 +41,15 @@ const Trendingapp = () => {
                     <p className='text-xl  opacity-80'>Explore All Trending Apps on the Market developed by us</p>
                 </div>
 
-                <div className='grid grid-cols-1 lg:grid-cols-3  '>
+                {loading ? <div className='flex justify-center '> <HashLoader  color='purple'/> </div> : <div className='grid grid-cols-1 lg:grid-cols-3  '>
                     {apps.map((app, ind) => {
                         return (
-                           <Appcard app={app} ind={ind}></Appcard>
+                            <Appcard app={app} key={ind}></Appcard>
                         );
 
                     })}
 
-                </div>
+                </div>}
 
 
             </div>
