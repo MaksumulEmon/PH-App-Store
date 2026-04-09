@@ -2,6 +2,7 @@ import React, { use, useEffect, useState } from 'react';
 // import { useLoaderData } from 'react-router';
 import Appcard from '../Ui/Appcard';
 import { HashLoader } from 'react-spinners';
+import { Link } from 'react-router';
 
 const Trendingapp = () => {
     // const  data= useLoaderData();
@@ -20,7 +21,7 @@ const Trendingapp = () => {
             setTimeout(() => {
                 setApps(data)
                 setLoading(false)
-            },2000);
+            }, 2000);
 
             // setApps(data);
             // setLoading(false);
@@ -41,8 +42,8 @@ const Trendingapp = () => {
                     <p className='text-xl  opacity-80'>Explore All Trending Apps on the Market developed by us</p>
                 </div>
 
-                {loading ? <div className='flex justify-center '> <HashLoader  color='purple'/> </div> : <div className='grid grid-cols-1 lg:grid-cols-3  '>
-                    {apps.map((app, ind) => {
+                {loading ? <div className='flex justify-center '> <HashLoader color='purple' /> </div> : <div className='grid grid-cols-1 lg:grid-cols-3  '>
+                    {apps.slice(0, 9).map((app, ind) => {
                         return (
                             <Appcard app={app} key={ind}></Appcard>
                         );
@@ -50,8 +51,12 @@ const Trendingapp = () => {
                     })}
 
                 </div>}
-
-
+                
+                <div className='text-center'>
+                    <Link to={"/allapp"}>
+                        <button className='btn bg-linear-to-r from-[#632ee3] to-[#9f62f2] text-white'>View All</button>
+                    </Link>
+                </div>
             </div>
         </div>
     );
