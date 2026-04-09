@@ -51,7 +51,6 @@ const Trendingapp = () => {
                     })}
 
                 </div>}
-                
                 <div className='text-center'>
                     <Link to={"/allapp"}>
                         <button className='btn bg-linear-to-r from-[#632ee3] to-[#9f62f2] text-white'>View All</button>
