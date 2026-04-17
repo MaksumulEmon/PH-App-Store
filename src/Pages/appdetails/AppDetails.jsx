@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router';
 import Useapps from '../../Components/hooks/Useapps';
 import { HashLoader } from 'react-spinners';
@@ -10,10 +10,8 @@ const AppDetails = () => {
 
     const expectedApp = apps.find((app) => app.id == id);
 
-    console.log(apps, loading, "apps", "loading")
-    console.log(expectedApp)
 
-
+    const [installedApps , setInstalledApps] = useState([]);
 
     if(loading) {
         return(
@@ -23,6 +21,11 @@ const AppDetails = () => {
         );
     }
 
+    const handleInstall= () =>{
+        setInstalledApps([...installedApps, expectedApp])
+    }
+
+console.log(installedApps)
 
     return (
         <div className='max-w-7xl mx-auto'>
@@ -30,7 +33,7 @@ const AppDetails = () => {
             <div className='shadow-2xl flex p-4 rounded-2xl'>
                 <img src={expectedApp.image} alt="" className='w-4- h-40' />
                 <h2>{expectedApp.companyName} </h2>
-                <button  className='btn bg-purple-500'> Install Now</button>
+                <button onClick={handleInstall} className='btn bg-purple-500'> Install Now</button>
 
             </div>
 
